@@ -4,6 +4,7 @@ export const primaryNavList = [
   { id: "our-difference", path: "/our-difference", label: "Our difference" },
   { id: "pricing", path: "/pricing", label: "Pricing" },
   { id: "docs", path: "/docs", label: "Docs" },
+  { id: "contact-us", path: "#", label: "Contact Us" },
 ];
 
 // Left Sidebar menu

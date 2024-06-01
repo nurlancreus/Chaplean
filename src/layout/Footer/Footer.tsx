@@ -4,7 +4,7 @@ import Copyright from "./Copyright";
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary-blue">
+    <footer className="bg-secondary-blue flex flex-col">
       <div className="container flex flex-col items-center justify-between px-[3.625rem] py-14 md:flex-row">
         <div className="mb-[1.875rem] md:mb-0">
           <Logo variant="footer" />
