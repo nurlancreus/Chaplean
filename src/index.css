@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-background-blue text-gray-white font-pro-display font-normal;
+  }
+}
+
+@font-face {
+  font-family: "Pro Display";
+  src: url(./assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Pro Display";
+  src: url(./assets/fonts/sf-pro-display/SFPRODISPLAYMEDIUM.OTF);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Pro Display";
+  src: url(./assets/fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF);
+  font-weight: 600;
+}
+
+/* Rəng property-lərini figma faylındakı adlara uyğun vermişəm. */
+:root {
+  --primary: #272938;
+  --primary-dark: #1E202D;
+  --primary-green: #35AF66;
+  --primary-red: #D22937;
+  --primary-blue: #1D9BF0;
+
+  --secondary-blue: #272C46;
+  --background-blue: #141526;
+  --white-blue: #E8F1F2;
+
+  --gray-white: #EEEEEE;
+  --gray-1: #BBBBBB;
+  --gray-2: #848484;
+  --gray-3: #515151;
+  --gray-4: #242424;
+
+  --scroll-thumb-clr: var(--primary-dark);
+  --scroll-thumb-hover-clr: var(--primary-blue);
+  --scroll-track-clr: var(--secondary-blue);
+}
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  isolation: isolate;
+}
+
+/* Toggle button animations */
+.toggle-btn>span {
+  transition: all 300ms ease;
+}
+
+.toggle-btn.not-toggled>span:nth-child(1) {
+  animation: toggleMenu 6s ease infinite;
+}
+
+.toggle-btn.not-toggled>span:nth-child(3) {
+  animation: toggleMenu 6s ease infinite;
+}
+
+.toggle-btn.toggled>span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, -1px);
+}
+
+.toggle-btn.toggled>span:nth-child(2) {
+  display: none;
+}
+
+.toggle-btn.toggled>span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -1px);
+}
+
+@keyframes toggleMenu {
+  0% {
+    scale: 0.75;
+  }
+
+  50% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 0.75;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  scrollbar-gutter: stable;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.textarea-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb-clr);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-track-clr);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover-clr);
+}
