@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
-import Header from "./Header";
 import Footer from "./Footer";
-import SidebarController from "./Sidebar/SidebarController";
+import Header from "./Header";
 import Sidebar from "./Sidebar";
+import { TMenu } from "./Sidebar/Sidebar";
+import SidebarController from "./Sidebar/SidebarController";
 
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { TMenu } from "./Sidebar/Sidebar";
+
 
 export default function AppLayout() {
   const [openedMenu, setOpenedMenu] = useState<TMenu | "">("");
